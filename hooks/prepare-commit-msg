@@ -1,0 +1,11 @@
+#!/bin/sh
+# Get the issue code from the branch name, and put it before the commit message
+# branch name:    ABC-65656565_changing_things
+# commit message: ABC-65656565 I changed something
+
+ISSUE_CODE=$(git rev-parse --abbrev-ref HEAD | grep -oE '^[a-zA-Z]+-[0-9]+')
+APPLIED=$(grep -c $ISSUE_CODE $1)
+
+if [ 0 -ge "$APPLIED" ]; then
+  echo `sed -i "1s/^/$ISSUE_CODE /" "$1"`
+fi
