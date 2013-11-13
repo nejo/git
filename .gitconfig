@@ -1,0 +1,34 @@
+# Git config Reference
+# http://git-scm.com/docs/gitignore
+
+# Github guide
+# https://help.github.com/articles/ignoring-files
+
+[alias]
+        co = checkout
+        ci = commit
+        st = status
+        br = branch
+        h = log --pretty=format:\"%Cgreen%h %ad%Creset %s%Cgreen%d%Creset [%an]\" --graph --date=short
+        ha = log --pretty=format:\"%Cgreen%h %ad%Creset %s%Cgreen%d%Creset [%an]\" --graph --date=short --all
+        last = log -1 HEAD
+        visual = !gitg
+ 
+[user]
+        name = My name
+        email = my.name@corporation.com
+[core]
+        excludesfile = /home/username/.gitignore
+ 
+[giggle]
+        main-window-maximized = true
+        main-window-geometry = 700x550+2178+412
+        main-window-view = FileView
+        history-view-vpane-position = 379
+        file-view-vpane-position = 639
+[color]
+        ui = true
+[push]
+        default = tracking
+#[merge]
+#        ff = false
